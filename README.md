@@ -54,24 +54,43 @@ en tiempo de ejecución).
 
 # Arquitectura (MVVM)
 
-## com.example.registrohoras
-## ├── MainActivity.kt / RegistroApp.kt     Punto de entrada y creación de BD/repositorio
-## ├── data/
-## │   ├── local/                           Room: RegistroEntity, RegistroDao, AppDatabase
-## │   └── RegistroRepository.kt            Acceso a datos para los ViewModels
-## ├── domain/
-## │   ├── FormularioValidator.kt           Reglas de validación (Kotlin puro, con tests)
-## │   └── Modelos.kt                       Usuario, Proyecto, catálogo y formatos
-## ├── viewmodel/
-## │   ├── RegistroViewModel.kt             Estado del formulario, validación y guardado
-## │   └── HorasViewModel.kt                Totales e historial
-## ├── ui/
-## │   ├── theme/                           Colores, formas, modo claro/oscuro
-## │   ├── components/                      Campos con validación, tarjetas reutilizables
-## │   ├── screens/                         Resumen, Registrar, Historial
-## │   └── navigation/                      NavHost + barra de navegación inferior
-## ├── util/                                Cámara (FotoHelper), ubicación, permisos
-## └── widget/                              Widget de pantalla de inicio
+#### com.example.registrohoras
+├── MainActivity.kt / RegistroApp.kt     
+
+Punto de entrada y creación de BD/repositorio
+├── data/
+│   ├── local/                           
+
+Room: RegistroEntity, RegistroDao, AppDatabase
+│   └── RegistroRepository.kt            
+
+Acceso a datos para los ViewModels
+├── domain/
+│   ├── FormularioValidator.kt           
+
+Reglas de validación (Kotlin puro, con tests)
+│   └── Modelos.kt                       
+
+Usuario, Proyecto, catálogo y formatos
+├── viewmodel/
+│   ├── RegistroViewModel.kt             
+
+Estado del formulario, validación y guardado
+│   └── HorasViewModel.kt                
+
+Totales e historial
+├── ui/
+│   ├── theme/                           
+
+Colores, formas, modo claro/oscuro
+│   ├── components/                      
+
+Campos con validación, tarjetas reutilizables
+│   ├── screens/                         Resumen, Registrar, Historial
+│   └── navigation/                      NavHost + barra de navegación inferior
+├── util/                                Cámara (FotoHelper), ubicación, permisos
+└── widget/  
+Widget de pantalla de inicio
 
 ## La interfaz no contiene lógica de validación: solo dibuja el FormularioState que expone el ViewModel, y las reglas viven en FormularioValidator.
 
