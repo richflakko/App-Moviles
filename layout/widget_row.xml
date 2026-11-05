@@ -1,0 +1,4 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingTop="8dp" android:paddingBottom="8dp">
+ <TextView android:id="@+id/project_name" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:textColor="#FFFFFF" android:textSize="13sp" android:maxLines="2"/>
+ <TextView android:id="@+id/project_hours" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:textColor="#A5C6FF" android:textStyle="bold" android:textSize="13sp"/>
+</LinearLayout>

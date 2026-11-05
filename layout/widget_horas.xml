@@ -1,0 +1,7 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="@drawable/widget_background">
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="DEEPSOURCE / HORAS" android:textColor="#A5C6FF" android:textSize="12sp"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mis proyectos" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="21sp" android:layout_marginTop="6dp"/>
+ <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Acumulado · todos los usuarios" android:textColor="#BDCCE3" android:textSize="11sp"/>
+ <LinearLayout android:id="@+id/project_rows" android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="vertical" android:layout_marginTop="8dp"/>
+ <Button android:id="@+id/register_button" android:layout_width="match_parent" android:layout_height="48dp" android:text="Registrar horas" android:textAllCaps="false" android:textColor="#FFFFFF" android:backgroundTint="#2563EB"/>
+</LinearLayout>
