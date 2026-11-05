@@ -50,8 +50,7 @@ widget en la pantalla de inicio.
 ejecución + FileProvider).
   2. Ubicación (GPS): coordenadas del lugar de trabajo (permiso
 en tiempo de ejecución).
-### • Persistencia local: Room (SQLite); los datos permanecen al
-cerrar la app.
+### • Persistencia local: Room (SQLite); los datos permanecen al cerrar la app.
 
 # Arquitectura (MVVM)
 
