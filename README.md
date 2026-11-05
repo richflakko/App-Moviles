@@ -5,10 +5,10 @@ El proyecto implementa una arquitectura moderna orientada a componentes (Jetpack
 
 
 # Integrantes / Estudiantes
-Benjamin Tomas Salgado Aliaga
-Jordan Alberto Moreno Sanchez
-Jose Ignacio Gavilan Llach
-Martin Alejandro Soto Gonzalez
+## Benjamin Tomas Salgado Aliaga
+## Jordan Alberto Moreno Sanchez
+## Jose Ignacio Gavilan Llach
+## Martin Alejandro Soto Gonzalez
 
 
 # Descripción del Proyecto
