@@ -34,25 +34,25 @@ widget en la pantalla de inicio.
 
 # Funcionalidades
 
-• Resumen: total acumulado y horas por proyecto con barras y
+### • Resumen: total acumulado y horas por proyecto con barras y
 contadores animados.
-• Registrar: formulario con usuario, proyecto, fecha, tarea, horas
+### • Registrar: formulario con usuario, proyecto, fecha, tarea, horas
 y minutos.
-  • Validación por campo con ícono (error / correcto) y mensaje
+  ### • Validación por campo con ícono (error / correcto) y mensaje
 animado bajo cada campo.
-  • Reglas: usuario y proyecto obligatorios, fecha no futura, tarea
+ ###  • Reglas: usuario y proyecto obligatorios, fecha no futura, tarea
 de 3 a 80 caracteres, minutos de 0 a 59, duración total mayor
 que 0 y máximo 24 h.
-• Historial: todos los registros, con foto y ubicación si existen;
+### • Historial: todos los registros, con foto y ubicación si existen;
 eliminar con confirmación.
-• Widget “Horas por proyecto”: muestra los totales y su botón abre
+### • Widget “Horas por proyecto”: muestra los totales y su botón abre
 la app en la pantalla de registro.
-• Recursos nativos (2):
+### • Recursos nativos (2):
   1. Cámara: foto como evidencia (permiso en tiempo de
 ejecución + FileProvider).
   2. Ubicación (GPS): coordenadas del lugar de trabajo (permiso
 en tiempo de ejecución).
-• Persistencia local: Room (SQLite); los datos permanecen al
+### • Persistencia local: Room (SQLite); los datos permanecen al
 cerrar la app.
 
 # Arquitectura (MVVM)
