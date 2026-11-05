@@ -22,9 +22,9 @@ settings.gradle.kts.
 ### • Jose Ignacio Gavilan Llach
 ### • Martin Alejandro Soto Gonzalez
 
-Equipo: Vappnet
+# Equipo: Vappnet
 
-Contexto
+# Contexto
 
 Una empresa de servicios necesita que su equipo registre cuántas horas
 dedica a cada proyecto. La app permite elegir usuario y proyecto,
@@ -32,7 +32,7 @@ registrar la tarea con su duración, adjuntar evidencia (foto y
 ubicación) y revisar los acumulados por proyecto, también desde un
 widget en la pantalla de inicio.
 
-Funcionalidades
+# Funcionalidades
 
 • Resumen: total acumulado y horas por proyecto con barras y
 contadores animados.
@@ -55,7 +55,7 @@ en tiempo de ejecución).
 • Persistencia local: Room (SQLite); los datos permanecen al
 cerrar la app.
 
-Arquitectura (MVVM)
+# Arquitectura (MVVM)
 
 com.example.registrohoras
 ├── MainActivity.kt / RegistroApp.kt     Punto de entrada y creación de BD/repositorio
@@ -80,7 +80,7 @@ La interfaz no contiene lógica de validación: solo dibuja el
 FormularioState que expone el ViewModel, y las reglas viven en
 FormularioValidator.
 
-Cómo ejecutar
+# Cómo ejecutar
 
 1. Android Studio Meerkat 2024.3.1 o superior, JDK 17 (el integrado
 sirve) y Android SDK 35.
@@ -97,7 +97,7 @@ punto.
 7. Widget: mantener presionado el inicio > Widgets > “Registro de
 horas” > “Horas por proyecto”.
 
-Pruebas
+# Pruebas
 
 ./gradlew test ejecuta las pruebas unitarias de las validaciones
 (FormularioValidatorTest).
