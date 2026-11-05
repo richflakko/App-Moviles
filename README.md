@@ -1,26 +1,26 @@
-Registro de horas – Vappnet
+# Registro de horas – Vappnet
 
 Aplicación móvil Android (Kotlin + Jetpack Compose) para registrar el
 tiempo dedicado a cada proyecto. Proyecto de la Evaluación Parcial 2
 
 
-Repositorio
+# Repositorio
 
-GitHub: https://github.com/richflakko/App-Moviles
+### GitHub: https://github.com/richflakko/App-Moviles
 
-Para clonar el proyecto:
+# Para clonar el proyecto:
 
 git clone https://github.com/richflakko/App-Moviles.git
 
 Luego abrir en Android Studio la carpeta del proyecto que contiene
 settings.gradle.kts.
 
-Integrantes
+# Integrantes
 
-• Benjamin Tomas Salgado Aliaga
-• Jordan Alberto Moreno Sanchez
-• Jose Ignacio Gavilan Llach
-• Martin Alejandro Soto Gonzalez
+### • Benjamin Tomas Salgado Aliaga
+### • Jordan Alberto Moreno Sanchez
+### • Jose Ignacio Gavilan Llach
+### • Martin Alejandro Soto Gonzalez
 
 Equipo: Vappnet
 
