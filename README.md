@@ -88,41 +88,40 @@ Busca la aplicación Vappnet y arrastra el widget Horas por proyecto a la pantal
 
 
 # Estructura del Proyecto
-app/src/main/
-├── java/com/example/registrohoras/
-│   ├── data/                   # Capa de persistencia local (Room DB, Entities y DAO)
-│   │   ├── local/
-│   │   │   ├── AppDatabase.kt  # Instancia principal de Room Database
-│   │   │   ├── RegistroDao.kt  # Interfaz DAO para consultas e inserciones
-│   │   │   └── RegistroEntity.kt # Tabla de registros y data classes agregadas
-│   ├── domain/                 # Lógica de negocio pura en Kotlin
-│   │   ├── FormularioValidator.kt # Validador del formulario y reglas cruzadas
-│   │   └── Modelos.kt          # Entidades de dominio, formato de horas y datos demo
-│   ├── ui/                     # Capa de interfaz gráfica en Jetpack Compose
-│   │   ├── components/         # Componentes reutilizables (Campos de entrada, RegistroCard)
-│   │   ├── navigation/         # Gráfico de navegación (AppNavigation y Destinos)
-│   │   ├── screens/            # Pantallas (ResumenScreen, RegistroScreen, HistorialScreen)
-│   │   └── theme/              # Tematización (Color, Shapes, RegistroHorasTheme)
-│   ├── util/                   # Helpers nativos del sistema
-│   │   ├── FotoHelper.kt       # Gestión segura de imágenes usando FileProvider
-│   │   ├── LocationHelper.kt   # Consultas de GPS mediante FusedLocationProviderClient
-│   │   └── PermisosHelper.kt   # Verificación de permisos en tiempo de ejecución
-│   ├── viewmodel/              # Gestores de estado y flujo de datos
-│   │   ├── HorasViewModel.kt   # Estado para pantallas Resumen e Historial
-│   │   └── RegistroViewModel.kt# Estado interactivo y validaciones del Formulario
-│   ├── widget/                 # Componente nativo de escritorio
-│   │   └── HorasWidgetProvider.kt # Provider para el AppWidget de la Home Screen
-│   ├── MainActivity.kt         # Actividad principal y manejo de Intents externos
-│   └── RegistroApp.kt          # Clase Application y contenedor global de dependencias
-├── test/java/com/example/registrohoras/
-│   └── domain/                 # Pruebas unitarias
-│       └── FormularioValidatorTest.kt # Pruebas con JUnit para las reglas del negocio
-└── res/                        # Recursos estáticos
-    ├── drawable/               # Iconografía e imágenes vectoriales (Fondo de widget, ic_launcher)
-    ├── layout/                 # Layouts XML para el AppWidget nativo
-    ├── values/                 # Estilos nativos (styles.xml) y textos (strings.xml)
-    └── xml/                    # Configuración de FileProvider y AppWidget Metadata
-
+### app/src/main/
+### ├── java/com/example/registrohoras/
+### │   ├── data/                   # Capa de persistencia local (Room DB, Entities y DAO)
+### │   │   ├── local/
+### │   │   │   ├── AppDatabase.kt  # Instancia principal de Room Database
+### │   │   │   ├── RegistroDao.kt  # Interfaz DAO para consultas e inserciones
+### │   │   │   └── RegistroEntity.kt # Tabla de registros y data classes agregadas
+### │   ├── domain/                 # Lógica de negocio pura en Kotlin
+### │   │   ├── FormularioValidator.kt # Validador del formulario y reglas cruzadas
+### │   │   └── Modelos.kt          # Entidades de dominio, formato de horas y datos demo
+### │   ├── ui/                     # Capa de interfaz gráfica en Jetpack Compose
+### │   │   ├── components/         # Componentes reutilizables (Campos de entrada, RegistroCard)
+### │   │   ├── navigation/         # Gráfico de navegación (AppNavigation y Destinos)
+### │   │   ├── screens/            # Pantallas (ResumenScreen, RegistroScreen, HistorialScreen)
+### │   │   └── theme/              # Tematización (Color, Shapes, RegistroHorasTheme)
+### │   ├── util/                   # Helpers nativos del sistema
+### │   │   ├── FotoHelper.kt       # Gestión segura de imágenes usando FileProvider
+### │   │   ├── LocationHelper.kt   # Consultas de GPS mediante FusedLocationProviderClient
+### │   │   └── PermisosHelper.kt   # Verificación de permisos en tiempo de ejecución
+### │   ├── viewmodel/              # Gestores de estado y flujo de datos
+### │   │   ├── HorasViewModel.kt   # Estado para pantallas Resumen e Historial
+### │   │   └── RegistroViewModel.kt# Estado interactivo y validaciones del Formulario
+### │   ├── widget/                 # Componente nativo de escritorio
+### │   │   └── HorasWidgetProvider.kt # Provider para el AppWidget de la Home Screen
+### │   ├── MainActivity.kt         # Actividad principal y manejo de Intents externos
+### │   └── RegistroApp.kt          # Clase Application y contenedor global de dependencias
+### ├── test/java/com/example/registrohoras/
+### │   └── domain/                 # Pruebas unitarias
+### │       └── FormularioValidatorTest.kt # Pruebas con JUnit para las reglas del negocio
+### └── res/                        # Recursos estáticos
+###     ├── drawable/               # Iconografía e imágenes vectoriales (Fondo de widget, ic_launcher)
+###    ├── layout/                 # Layouts XML para el AppWidget nativo
+### ├── values/                 # Estilos nativos (styles.xml) y textos (strings.xml)
+###    └── xml/                    # Configuración de FileProvider y AppWidget Metadata
 
 
 
