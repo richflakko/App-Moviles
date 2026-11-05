@@ -1,129 +1,103 @@
-# Vappnet - Registro de Horas (Deepsource)
+Registro de horas – Vappnet
 
-Aplicación móvil nativa desarrollada en Android con Kotlin para el registro, seguimiento y gestión del tiempo dedicado a proyectos operacionales en la plataforma Deepsource.
-El proyecto implementa una arquitectura moderna orientada a componentes (Jetpack Compose), persistencia de datos local (Room Database), reactividad mediante Coroutines & Flow, validaciones puras unit-tested y un AppWidget nativo interactivo para la pantalla de inicio del dispositivo.
-
-
-# Integrantes / Estudiantes
-## Benjamin Tomas Salgado Aliaga
-## Jordan Alberto Moreno Sanchez
-## Jose Ignacio Gavilan Llach
-## Martin Alejandro Soto Gonzalez
+Aplicación móvil Android (Kotlin + Jetpack Compose) para registrar el
+tiempo dedicado a cada proyecto. Proyecto de la Evaluación Parcial 2
 
 
-# Descripción del Proyecto
-Vappnet es una solución móvil diseñada para optimizar el control de horas de trabajo en proyectos de software operacionales. La aplicación permite a los usuarios registrar sesiones de trabajo asociadas a proyectos específicos, adjuntar evidencia multimedia (fotos capturadas desde la cámara) y guardar coordenadas de geolocalización mediante GPS. Además, ofrece un panel de resumen con métricas visuales acumuladas, un historial cronológico gestionable y un widget de acceso rápido para la pantalla de inicio del dispositivo.
+Repositorio
 
-# Funcionalidades Implementadas
+GitHub: https://github.com/richflakko/App-Moviles
 
-## Dashboard y Resumen General:
-Contador animado en tiempo real con el total general de horas acumuladas.
-Desglose por proyecto con indicadores visuales de progreso (LinearProgressIndicator).
-Vista previa de la actividad más reciente.
+Para clonar el proyecto:
 
- ## Formulario de Registro con Validación Dinámica:
-Selección de usuario y proyecto desde listas del catálogo.
-Selector de fecha nativo de Material Design 3 (con restricción para evitar fechas futuras).
-Campos de entrada de horas, minutos y descripción de la tarea.
-Validación en tiempo real al perder el foco y retroalimentación visual con íconos de estado animados.
+git clone https://github.com/richflakko/App-Moviles.git
 
-## Evidencia Multimedia Nativa:
-Cámara: Captura e inclusión de fotografía del trabajo realizado mediante FileProvider.
-Ubicación GPS: Obtención de coordenadas geográficas (latitud/longitud) exactas del lugar de trabajo usando FusedLocationProviderClient.
-Gestión de permisos en tiempo de ejecución para cámara y ubicación.
+Luego abrir en Android Studio la carpeta del proyecto que contiene
+settings.gradle.kts.
 
-## Historial y Gestión de Registros:
-Lista cronológica interactiva de todos los registros guardados en el dispositivo.
-Eliminación de registros individuales con diálogo de confirmación y eliminación automática de la fotografía asociada en el almacenamiento local.
+Integrantes
 
-## AppWidget Nativo para Pantalla de Inicio:
-Visualización del tiempo acumulado por proyecto en el escritorio de Android.
-Actualización automática en tiempo real cada vez que se crea o elimina un registro en la app.
-Botón interactivo "Registrar horas" que abre directamente la pantalla de registro dentro de la aplicación.
+• Benjamin Tomas Salgado Aliaga
+• Jordan Alberto Moreno Sanchez
+• Jose Ignacio Gavilan Llach
+• Martin Alejandro Soto Gonzalez
 
-## Pruebas Unitarias:
-Suite de pruebas unitarias puras con JUnit para validar la lógica del formulario (FormularioValidatorTest).
+Equipo: Vappnet
 
+Contexto
 
-# Arquitectura y Tecnologías
-El proyecto sigue la arquitectura recomendada por Google (Clean Architecture en capas simples):
+Una empresa de servicios necesita que su equipo registre cuántas horas
+dedica a cada proyecto. La app permite elegir usuario y proyecto,
+registrar la tarea con su duración, adjuntar evidencia (foto y
+ubicación) y revisar los acumulados por proyecto, también desde un
+widget en la pantalla de inicio.
 
+Funcionalidades
 
-## Lenguaje: Kotlin 2.0+
-## UI Layer: Jetpack Compose (UI 100% declarativa, Material Design 3, animaciones integradas).
-## State Management: AndroidViewModel con StateFlow y recolección reactiva sensible al ciclo de vida (collectAsStateWithLifecycle).
-## Domain Layer: Lógica de negocio y reglas de validación puras en Kotlin (desacopladas del framework de Android) con soporte para Unit Testing (JUnit).
-## Data Layer: Persistencia local con Room Database (DAO, Entities y StateFlow Flow streaming).
-## Carga de Imágenes: Coil para Jetpack Compose.
-## Recursos Nativos: FileProvider para gestión segura de archivos e integración de ubicación con Google Play Services Location.
+• Resumen: total acumulado y horas por proyecto con barras y
+contadores animados.
+• Registrar: formulario con usuario, proyecto, fecha, tarea, horas
+y minutos.
+  • Validación por campo con ícono (error / correcto) y mensaje
+animado bajo cada campo.
+  • Reglas: usuario y proyecto obligatorios, fecha no futura, tarea
+de 3 a 80 caracteres, minutos de 0 a 59, duración total mayor
+que 0 y máximo 24 h.
+• Historial: todos los registros, con foto y ubicación si existen;
+eliminar con confirmación.
+• Widget “Horas por proyecto”: muestra los totales y su botón abre
+la app en la pantalla de registro.
+• Recursos nativos (2):
+  1. Cámara: foto como evidencia (permiso en tiempo de
+ejecución + FileProvider).
+  2. Ubicación (GPS): coordenadas del lugar de trabajo (permiso
+en tiempo de ejecución).
+• Persistencia local: Room (SQLite); los datos permanecen al
+cerrar la app.
 
-# Pasos para Ejecutar el Proyecto
-## Requisitos Previos
-## Android Studio: Versión Iguana / Ladybug o superior (o IntelliJ IDEA con plugin de Android habilitado).
-## JDK: Java 17 instalado y configurado.
-## Dispositivo: Dispositivo físico con Android 8.0 (API Nivel 26) o posterior con depuración USB activada, o un emulador de Android Studio (AVD).
+Arquitectura (MVVM)
 
-# Pasos de Instalación y Ejecución
-## Clonar o descargar el repositorio:
-git clone <URL_DEL_REPOSITORIO>
+com.example.registrohoras
+├── MainActivity.kt / RegistroApp.kt     Punto de entrada y creación de BD/repositorio
+├── data/
+│   ├── local/                           Room: RegistroEntity, RegistroDao, AppDatabase
+│   └── RegistroRepository.kt            Acceso a datos para los ViewModels
+├── domain/
+│   ├── FormularioValidator.kt           Reglas de validación (Kotlin puro, con tests)
+│   └── Modelos.kt                       Usuario, Proyecto, catálogo y formatos
+├── viewmodel/
+│   ├── RegistroViewModel.kt             Estado del formulario, validación y guardado
+│   └── HorasViewModel.kt                Totales e historial
+├── ui/
+│   ├── theme/                           Colores, formas, modo claro/oscuro
+│   ├── components/                      Campos con validación, tarjetas reutilizables
+│   ├── screens/                         Resumen, Registrar, Historial
+│   └── navigation/                      NavHost + barra de navegación inferior
+├── util/                                Cámara (FotoHelper), ubicación, permisos
+└── widget/                              Widget de pantalla de inicio
 
-## Abrir el proyecto:
-Abre Android Studio (o IntelliJ IDEA).
-Selecciona Open y busca la carpeta raíz del proyecto descargado.
-Espera a que Gradle sincronice todas las dependencias del proyecto (Sync Project with Gradle Files).
+La interfaz no contiene lógica de validación: solo dibuja el
+FormularioState que expone el ViewModel, y las reglas viven en
+FormularioValidator.
 
-## Ejecutar Pruebas Unitarias (Opcional):
-En el panel lateral, navega a app/src/test/java/com/example/registrohoras/domain/FormularioValidatorTest.kt.
-Haz clic derecho sobre el archivo y selecciona Run 'FormularioValidatorTest' (o ejecuta ./gradlew test en la terminal).
+Cómo ejecutar
 
-## Compilar y Ejecutar la App:
-Selecciona tu emulador o dispositivo físico conectado en la barra superior.
-Haz clic en el botón de reproducción verde Run 'app' (o presiona Shift + F10).
-La aplicación se instalará y abrirá automáticamente en la pantalla de Resumen.
+1. Android Studio Meerkat 2024.3.1 o superior, JDK 17 (el integrado
+sirve) y Android SDK 35.
+2. Clonar el repositorio con el comando indicado arriba, o descargar el
+proyecto desde GitHub.
+3. En Android Studio selecciona File > Open y elegir la carpeta del
+proyecto (la que contiene settings.gradle.kts).
+4. Esperar la sincronización de Gradle (la primera vez necesita
+internet).
+5. Crear o usar un emulador con API 26+ con Google Play (la ubicación
+usa Google Play Services) y pulsar Run.
+6. Para probar la ubicación en el emulador: ⋯ > Location y definir un
+punto.
+7. Widget: mantener presionado el inicio > Widgets > “Registro de
+horas” > “Horas por proyecto”.
 
-## Probar el Widget de Escritorio:
-Vuelve a la pantalla de inicio del emulador/dispositivo.
-Mantén presionado un espacio vacío de la pantalla de inicio y selecciona Widgets.
-Busca la aplicación Vappnet y arrastra el widget Horas por proyecto a la pantalla.
+Pruebas
 
-
-# Estructura del Proyecto
-### app/src/main/
-### ├── java/com/example/registrohoras/
-### │   ├── data/                   # Capa de persistencia local (Room DB, Entities y DAO)
-### │   │   ├── local/
-### │   │   │   ├── AppDatabase.kt  # Instancia principal de Room Database
-### │   │   │   ├── RegistroDao.kt  # Interfaz DAO para consultas e inserciones
-### │   │   │   └── RegistroEntity.kt # Tabla de registros y data classes agregadas
-### │   ├── domain/                 # Lógica de negocio pura en Kotlin
-### │   │   ├── FormularioValidator.kt # Validador del formulario y reglas cruzadas
-### │   │   └── Modelos.kt          # Entidades de dominio, formato de horas y datos demo
-### │   ├── ui/                     # Capa de interfaz gráfica en Jetpack Compose
-### │   │   ├── components/         # Componentes reutilizables (Campos de entrada, RegistroCard)
-### │   │   ├── navigation/         # Gráfico de navegación (AppNavigation y Destinos)
-### │   │   ├── screens/            # Pantallas (ResumenScreen, RegistroScreen, HistorialScreen)
-### │   │   └── theme/              # Tematización (Color, Shapes, RegistroHorasTheme)
-### │   ├── util/                   # Helpers nativos del sistema
-### │   │   ├── FotoHelper.kt       # Gestión segura de imágenes usando FileProvider
-### │   │   ├── LocationHelper.kt   # Consultas de GPS mediante FusedLocationProviderClient
-### │   │   └── PermisosHelper.kt   # Verificación de permisos en tiempo de ejecución
-### │   ├── viewmodel/              # Gestores de estado y flujo de datos
-### │   │   ├── HorasViewModel.kt   # Estado para pantallas Resumen e Historial
-### │   │   └── RegistroViewModel.kt# Estado interactivo y validaciones del Formulario
-### │   ├── widget/                 # Componente nativo de escritorio
-### │   │   └── HorasWidgetProvider.kt # Provider para el AppWidget de la Home Screen
-### │   ├── MainActivity.kt         # Actividad principal y manejo de Intents externos
-### │   └── RegistroApp.kt          # Clase Application y contenedor global de dependencias
-### ├── test/java/com/example/registrohoras/
-### │   └── domain/                 # Pruebas unitarias
-### │       └── FormularioValidatorTest.kt # Pruebas con JUnit para las reglas del negocio
-### └── res/                        # Recursos estáticos
-###     ├── drawable/               # Iconografía e imágenes vectoriales (Fondo de widget, ic_launcher)
-###    ├── layout/                 # Layouts XML para el AppWidget nativo
-### ├── values/                 # Estilos nativos (styles.xml) y textos (strings.xml)
-###    └── xml/                    # Configuración de FileProvider y AppWidget Metadata
-
-
-
-# Licencia
-Este proyecto fue desarrollado con fines educativos para la asignatura de Desarrollo de Aplicaciones Móviles.
+./gradlew test ejecuta las pruebas unitarias de las validaciones
+(FormularioValidatorTest).
