@@ -1,4 +1,0 @@
-<resources>
-    <!-- Tema base de la ventana; los colores de la UI los define Compose (ui/theme). -->
-    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar" />
-</resources>
