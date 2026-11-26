@@ -1,0 +1,6 @@
+<resources>
+    <!-- Tema base de la ventana; los colores de la UI los define Compose (ui/theme). El fondo evita destellos al abrir. -->
+    <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/aurora_frost</item>
+    </style>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Vappnet</string>
+    <string name="widget_label">Horas por proyecto</string>
+    <string name="widget_label_compacto">Horas por proyecto (compacto)</string>
+    <string name="widget_descripcion">Total acumulado, proyectos principales y acceso rápido para registrar horas.</string>
+    <string name="widget_descripcion_compacto">Versión rectangular: total, dos proyectos y el botón +.</string>
+</resources>

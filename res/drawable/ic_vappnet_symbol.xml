@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Símbolo "V Flow / Nexus Orb" de Vappnet. Vector con degradados: se ve nítido desde 24 dp hasta el ícono de la app. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+
+    <!-- Cuerpo oscuro -->
+    <path android:pathData="M9,32 a23,18 0 1,0 46,0 a23,18 0 1,0 -46,0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="32"
+                android:centerY="32"
+                android:gradientRadius="22">
+                <item android:offset="0" android:color="#FF2B2570" />
+                <item android:offset="1" android:color="#FF0F0B26" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Aro principal -->
+    <path
+        android:pathData="M7,31 a25,19 0 1,0 50,0 a25,19 0 1,0 -50,0 Z"
+        android:strokeWidth="2.4">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:type="linear"
+                android:startX="8"
+                android:startY="10"
+                android:endX="56"
+                android:endY="54">
+                <item android:offset="0" android:color="#FF36D8FF" />
+                <item android:offset="0.38" android:color="#FF345CFF" />
+                <item android:offset="0.72" android:color="#FF926BFF" />
+                <item android:offset="1" android:color="#FFD578FF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Aro secundario -->
+    <path
+        android:pathData="M8.4,33 a23.6,18 0 1,0 47.2,0 a23.6,18 0 1,0 -47.2,0 Z"
+        android:strokeWidth="1.6">
+        <aapt:attr name="android:strokeColor">
+            <gradient
+                android:type="linear"
+                android:startX="10"
+                android:startY="14"
+                android:endX="54"
+                android:endY="50">
+                <item android:offset="0" android:color="#FF7C8DFF" />
+                <item android:offset="1" android:color="#FFD578FF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Aro iridiscente fino -->
+    <path
+        android:pathData="M9.8,35 a22.2,16.6 0 1,0 44.4,0 a22.2,16.6 0 1,0 -44.4,0 Z"
+        android:strokeColor="#BFD578FF"
+        android:strokeWidth="1.2" />
+
+    <!-- Destello cian -->
+    <path
+        android:pathData="M10.35,21.5 A25,19 0 0,1 36.3,12.3"
+        android:strokeColor="#FF36D8FF"
+        android:strokeLineCap="round"
+        android:strokeWidth="3.6" />
+
+    <!-- Núcleo -->
+    <path
+        android:fillColor="#2E36D8FF"
+        android:pathData="M25.8,32 a6.2,6.2 0 1,0 12.4,0 a6.2,6.2 0 1,0 -12.4,0 Z" />
+    <path
+        android:fillColor="#FFE9FCFF"
+        android:pathData="M28.7,32 a3.3,3.3 0 1,0 6.6,0 a3.3,3.3 0 1,0 -6.6,0 Z" />
+</vector>

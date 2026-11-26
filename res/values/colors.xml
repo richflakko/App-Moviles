@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta Cyber Aurora (los mismos valores que ui/theme/Color.kt) -->
+    <color name="aurora_void">#FF090817</color>
+    <color name="aurora_nebula">#FF17102F</color>
+    <color name="aurora_electric">#FF345CFF</color>
+    <color name="aurora_ice">#FF36D8FF</color>
+    <color name="aurora_ultraviolet">#FF926BFF</color>
+    <color name="aurora_iridescent">#FFD578FF</color>
+    <color name="aurora_frost">#FFF2F0FA</color>
+    <color name="ic_launcher_background">#FF090817</color>
+</resources>
