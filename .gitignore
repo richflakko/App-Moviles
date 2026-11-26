@@ -1,0 +1,21 @@
+# Archivos propios de cada equipo (no versionar)
+*.iml
+.gradle/
+.kotlin/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+**/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.hprof
+
+# Firma del APK: NUNCA subir la llave ni sus contraseñas
+keystore.properties
+*.jks
+*.keystore
+local.properties
